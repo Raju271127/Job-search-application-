@@ -21,7 +21,7 @@ class Dashboard extends Component {
 
     componentDidMount() {
         const { user } = this.props.auth;
-        axios.get('http://localhost:4000/user/'+ user.id)
+        axios.get('https://job-search-applicatoin-api.onrender.com/user/'+ user.id)
              .then(response => {
                  this.setState({userdetails: response.data});
              })
