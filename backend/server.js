@@ -34,7 +34,7 @@ var JobRouter = require("./routes/job.routes");
 var ApplicationRouter = require("./routes/application.routes");
 
 app.use(cors({
-    origin:["https://dvlpr2003-job-search-application.onrender.com/"],
+    origin:["https://dvlpr2003-job-search-application.onrender.com"],
     method:["POST","GET"],
     credentials:true
 }));
