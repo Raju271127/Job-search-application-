@@ -52,28 +52,28 @@ class AppList extends Component {
 
     componentDidMount() {
         const { user } = this.props.auth;
-        axios.get('http://localhost:4000/user/'+ user.id)
+        axios.get('https://job-search-applicatoin-api.onrender.comuser/'+ user.id)
                 .then(response => {
                     this.setState({userdetails: response.data});
                 })
                 .catch(function(error) {
                     console.log(error);
                 })
-        axios.get('http://localhost:4000/job/get_jobs')
+        axios.get('https://job-search-applicatoin-api.onrender.com/job/get_jobs')
             .then(response => {
                 this.setState({jobs: response.data});
             })
             .catch(function(error) {
                 console.log(error);
             })
-        axios.get('http://localhost:4000/user/')
+        axios.get('https://job-search-applicatoin-api.onrender.com/user/')
             .then(response => {
                 this.setState({users: response.data});
             })
             .catch(function(error) {
                 console.log(error);
             })
-        axios.get('http://localhost:4000/application/get_applications')
+        axios.get('https://job-search-applicatoin-api.onrender.com/application/get_applications')
             .then(response => {
                 this.setState({applications: response.data});
             })
@@ -216,7 +216,7 @@ class AppList extends Component {
         };
 
         axios
-            .put('http://localhost:4000/application/edit_application/' + application._id, editApplication)
+            .put('https://job-search-applicatoin-api.onrender.com/application/edit_application/' + application._id, editApplication)
             .then(response => {
                 console.log(editApplication);
             })
@@ -248,7 +248,7 @@ class AppList extends Component {
                     //     numapp: newNumApp
                     // }
                     axios
-                        .put('http://localhost:4000/application/edit_application/' + appli._id, tempAppli)
+                        .put('https://job-search-applicatoin-api.onrender.com/application/edit_application/' + appli._id, tempAppli)
                         .then(response => {
                             console.log(tempAppli);
                         })
@@ -282,7 +282,7 @@ class AppList extends Component {
         };
 
         axios
-            .put('http://localhost:4000/job/edit_job/' + job._id, editJob)
+            .put('https://job-search-applicatoin-api.onrender.com/job/edit_job/' + job._id, editJob)
             .then(response => {
                 console.log(editJob);
             })
@@ -291,7 +291,7 @@ class AppList extends Component {
             })
 
         axios
-            .put('http://localhost:4000/application/edit_application/' + application._id, editApplication)
+            .put('https://job-search-applicatoin-api.onrender.com/application/edit_application/' + application._id, editApplication)
             .then(response => {
                 console.log(editApplication);
             })
@@ -300,7 +300,7 @@ class AppList extends Component {
             })
         
         axios
-            .put('http://localhost:4000/user/edit_profile/' + application.applicantId, editApplicant)
+            .put('https://job-search-applicatoin-api.onrender.com/user/edit_profile/' + application.applicantId, editApplicant)
             .then(response => {
                 console.log(editApplicant);
             })
@@ -321,7 +321,7 @@ class AppList extends Component {
                 //     numapp: napp
                 // }
                 axios
-                    .put('http://localhost:4000/application/edit_application/' + appli._id, editAppli)
+                    .put('https://job-search-applicatoin-api.onrender.com/application/edit_application/' + appli._id, editAppli)
                     .then(response => {
                         console.log(editAppli);
                     })
@@ -367,7 +367,7 @@ class AppList extends Component {
         // };
 
         axios
-            .put('http://localhost:4000/application/edit_application/' + application._id, editApplication)
+            .put('https://job-search-applicatoin-api.onrender.com/application/edit_application/' + application._id, editApplication)
             .then(response => {
                 console.log(editApplication);
             })
@@ -385,7 +385,7 @@ class AppList extends Component {
         //     })
         
         axios
-            .put('http://localhost:4000/user/edit_profile/' + application.applicantId, editApplicant)
+            .put('https://job-search-applicatoin-api.onrender.com/user/edit_profile/' + application.applicantId, editApplicant)
             .then(response => {
                 console.log(editApplicant);
             })
