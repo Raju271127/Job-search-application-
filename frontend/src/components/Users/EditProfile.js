@@ -33,7 +33,7 @@ class EditProfile extends Component {
 
     componentDidMount() {
         const { user } = this.props.auth;
-        axios.get('http://localhost:4000/user/'+ user.id)
+        axios.get('https://job-search-applicatoin-api.onrender.com/user/'+ user.id)
              .then(response => {
                 this.setState(
                 {
@@ -50,7 +50,7 @@ class EditProfile extends Component {
              .catch(function(error) {
                  console.log(error);
              })
-        axios.get('http://localhost:4000/job/get_jobs')
+        axios.get('https://job-search-applicatoin-api.onrender.com/job/get_jobs')
             .then(response => {
                 this.setState({jobs: response.data});
             })
@@ -123,7 +123,7 @@ class EditProfile extends Component {
         const isValid = this.validate();
         if (isValid) {
             axios
-                .put('http://localhost:4000/user/edit_profile/' + user.id, editedUser)
+                .put('https://job-search-applicatoin-api.onrender.com/user/edit_profile/' + user.id, editedUser)
                 .then(response => {
                     console.log(editedUser);this.props.history.push('/profile');
                 })
@@ -137,7 +137,7 @@ class EditProfile extends Component {
                     recruiterEmail: euser.email
                 }
                 axios
-                    .put('http://localhost:4000/job/edit_job/' + jobb._id, editJob)
+                    .put('https://job-search-applicatoin-api.onrender.com/job/edit_job/' + jobb._id, editJob)
                     .then(response => {
                         console.log(editJob);
                     })
