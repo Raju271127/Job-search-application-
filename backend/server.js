@@ -20,7 +20,7 @@ const passport = require("passport");
 const app = express();
 
 const PORT = 4000;
-const DB_NAME = "JobsPlanet"
+// const DB_NAME = "JobsPlanet"
 
 // Passport middleware
 app.use(passport.initialize());
@@ -40,7 +40,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Connect to MongoDB
 // To localhost
-mongoose.connect('mongodb+srv://dvlpr2003:<WLRSxEEuD92nc13t>@cluster0.fmrgmxo.mongodb.net/?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://dvlpr2003:<WLRSxEEuD92nc13t>@cluster0.fmrgmxo.mongodb.net/JobsPlanet?retryWrites=true&w=majority');
 const connection = mongoose.connection;
 connection.once('open', function() {
     console.log("MongoDB database connection established successfully !");
