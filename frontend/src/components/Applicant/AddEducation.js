@@ -26,7 +26,7 @@ class AddEducation extends Component {
 
     componentDidMount() {
         const { user } = this.props.auth;
-        axios.get('http://localhost:4000/user/'+ user.id)
+        axios.get('https://job-search-applicatoin-api.onrender.com/user/'+ user.id)
             .then(response => {
                 this.setState({userDetails: response.data});
             })
@@ -73,7 +73,7 @@ class AddEducation extends Component {
         else{
             this.state.userDetails.education.push(newEducation);
             axios
-                .put('http://localhost:4000/user/edit_profile/' + user.id, this.state.userDetails)
+                .put('https://job-search-applicatoin-api.onrender.com/user/edit_profile/' + user.id, this.state.userDetails)
                 .then(response => {
                     console.log(this.state.userDetails);this.props.history.push('/profile');
                 })
