@@ -51,10 +51,10 @@ connection.once('open', function() {
 })
 
 // setup API endpoints
-app.use("/testAPI", testAPIRouter);
-app.use("/user", UserRouter);
-app.use("/job", JobRouter);
-app.use("/application", ApplicationRouter);
+app.use("/api/testAPI", testAPIRouter);
+app.use("/api/user", UserRouter);
+app.use("/api/job", JobRouter);
+app.use("/api/application", ApplicationRouter);
 
 app.listen(PORT, function() {
     console.log("Server is running on Port: " + PORT);
