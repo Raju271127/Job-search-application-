@@ -28,10 +28,10 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 
 // routes
-var testAPIRouter = require("./routes/testAPI");
-var UserRouter = require("./routes/users.routes");
-var JobRouter = require("./routes/job.routes");
-var ApplicationRouter = require("./routes/application.routes");
+var testAPIRouter = require("api/routes/testAPI");
+var UserRouter = require("api/routes/users.routes");
+var JobRouter = require("api/routes/job.routes");
+var ApplicationRouter = require("api/routes/application.routes");
 
 app.use(cors({
     origin:["https://dvlpr2003-job-search-application.onrender.com"],
@@ -51,10 +51,10 @@ connection.once('open', function() {
 })
 
 // setup API endpoints
-app.use("./testAPI", testAPIRouter);
-app.use("./user", UserRouter);
-app.use("./job", JobRouter);
-app.use("m/application", ApplicationRouter);
+app.use("/testAPI", testAPIRouter);
+app.use("/user", UserRouter);
+app.use("/job", JobRouter);
+app.use("/application", ApplicationRouter);
 
 app.listen(PORT, function() {
     console.log("Server is running on Port: " + PORT);
