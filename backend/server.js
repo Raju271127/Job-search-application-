@@ -28,10 +28,10 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 
 // routes
-var testAPIRouter = require("/routes/testAPI");
-var UserRouter = require("/routes/users.routes");
-var JobRouter = require("/routes/job.routes");
-var ApplicationRouter = require("/routes/application.routes");
+var testAPIRouter = require("./routes/testAPI");
+var UserRouter = require("./routes/users.routes");
+var JobRouter = require("./routes/job.routes");
+var ApplicationRouter = require("./routes/application.routes");
 
 app.use(cors({
     origin:["https://dvlpr2003-job-search-application.onrender.com"],
