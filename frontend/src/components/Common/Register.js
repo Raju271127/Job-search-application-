@@ -24,10 +24,8 @@ class Register extends Component {
         this.setState({role: event.target.value});
     }
     componentDidMount() {
-        const { user } = this.props.auth;
         // If logged in and user navigates to Register page, should redirect them to dashboard
-         axios
-            .put('https://job-search-applicatoin-api.onrender.com/register')
+ 
         if (this.props.auth.isAuthenticated) {
             this.props.history.push("/dashboard");
         }
